@@ -1,0 +1,215 @@
+/* ── reset & base ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:    #e60023;
+  --red-dk: #ad081b;
+  --bg:     #f5f5f5;
+  --card:   #ffffff;
+  --text:   #111111;
+  --muted:  #767676;
+  --radius: 16px;
+  --shadow: 0 4px 24px rgba(0,0,0,.10);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── header ──────────────────────────────────────────────────────────────── */
+header {
+  background: var(--red);
+  color: #fff;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+header svg { flex-shrink: 0; }
+
+header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -.3px;
+}
+
+header p {
+  font-size: .85rem;
+  opacity: .85;
+  margin-top: 2px;
+}
+
+/* ── main ────────────────────────────────────────────────────────────────── */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px 60px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 640px;
+}
+
+/* ── form ────────────────────────────────────────────────────────────────── */
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.input-row input[type="url"] {
+  flex: 1;
+  border: 2px solid #d8d8d8;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.input-row input[type="url"]:focus { border-color: var(--red); }
+
+.btn {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+  white-space: nowrap;
+}
+
+.btn:hover  { background: var(--red-dk); }
+.btn:active { transform: scale(.97); }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+
+/* ── status / error ──────────────────────────────────────────────────────── */
+#status {
+  margin-top: 20px;
+  font-size: .92rem;
+  color: var(--muted);
+  min-height: 24px;
+}
+
+#status.error { color: #c0392b; font-weight: 500; }
+
+/* ── results ─────────────────────────────────────────────────────────────── */
+#results { margin-top: 24px; }
+
+.result-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  word-break: break-word;
+}
+
+.video-options { display: flex; flex-direction: column; gap: 10px; }
+
+.video-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 12px 16px;
+  gap: 12px;
+}
+
+.video-item .quality {
+  font-weight: 700;
+  font-size: .95rem;
+  min-width: 52px;
+}
+
+.video-item .video-url {
+  flex: 1;
+  font-size: .78rem;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dl-btn {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s;
+  flex-shrink: 0;
+}
+
+.dl-btn:hover { background: var(--red-dk); }
+
+/* ── how-to ──────────────────────────────────────────────────────────────── */
+.how-to {
+  margin-top: 36px;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 28px;
+}
+
+.how-to h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; }
+
+.steps { display: flex; flex-direction: column; gap: 10px; }
+
+.step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.step-num {
+  background: var(--red);
+  color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: .85rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.step p { font-size: .92rem; line-height: 1.5; color: #444; }
+
+/* ── footer ──────────────────────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 18px;
+  font-size: .82rem;
+  color: var(--muted);
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ── responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .card { padding: 24px 16px; }
+  .input-row { flex-direction: column; }
+  .btn { width: 100%; }
+}
