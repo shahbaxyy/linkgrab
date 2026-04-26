@@ -1,2 +1,2 @@
 # linkgrab
-Pinterest Video Downloader
+[Pinterest Video Downloader]([url](https://linkgrab.io/))
